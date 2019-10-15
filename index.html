@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 </head>
+
 <body>
 
 
@@ -45,6 +50,10 @@
       <kbd>L</kbd>
       <span class="sound">tink</span>
     </div>
+
+    <button onclick="createInput();"> Add Sound</button>
+
+
   </div>
 
   <audio data-key="65" src="sounds/clap.wav"></audio>
@@ -57,36 +66,50 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-<script>
+  <script>
 
-function playSound(e){
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  if(!audio) return; //if no key assigned then stop the function
-  //console.log(e);
-  audio.currentTime = 0;
-  audio.play();
-  key.classList.add('playing'); //changing to playing css 
-}
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      if (!audio) return; //if no key assigned then stop the function
+      //console.log(e);
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add('playing'); //changing to playing css 
+    }
 
-function removeTransition(e){
-  if(e.propertyName !== 'transform') return; //skip if its not a transform (this ignore all border changes or anything else)
-  this.classList.remove('playing');
-
-}
-
-const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return; //skip if its not a transform (this ignore all border changes or anything else)
+      this.classList.remove('playing');
+    }
 
 
-window.addEventListener('keydown',playSound); //playing the sound on keypress 
-
+    function createInput() {
+      var $input = $('<input type="button" value="new button" />');
+      $input.appendTo($(".keys"));
+    }
 
 
 
 
-</script>
+
+
+
+
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+
+    window.addEventListener('keydown', playSound); //playing the sound on keypress 
+
+
+
+
+
+  </script>
 
 
 </body>
+
 </html>
