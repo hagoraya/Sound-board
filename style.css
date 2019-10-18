@@ -22,6 +22,19 @@ body {
 
 }
 
+#CreateNewSoungDialog {
+  display: none;
+}
+
+.myTarget {
+  font-weight:bold;
+  font-style:italic;
+  color:red;
+}
+
+
+
+
 .buttons, .abutton {
   border: .4rem solid black;
   border-radius: .5rem;

@@ -6,6 +6,7 @@
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
   <script src="js/scripts.js"></script>
 
 
@@ -14,16 +15,26 @@
 
 <body>
 
+  
+
+  <div>Here is the rest of the page. Hopefully we can get the value from the dialog form?! Should display 
+      <span class="myTarget">here</span> when finished.</div>
+
+  <!-- Create a popup-->
+  <div id="CreateNewSoungDialog" title="Add a new Sound">
+    <p> Create a new sound button, Enter you details </p> 
+    <input class="myInput" type="text" />
+    <button class="CreateSoundButton">Create!</button>
+  </div>
 
   <div class="keys">
-    
-    <div class="abutton">
-      <button id="addButton"> Add Sound</button>
+      <div class="abutton">
+        <button id="addButton"> Add Sound</button>
+      </div>
     </div>
-   
+  
 
-
-  </div>
+ 
 
   <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
