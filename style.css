@@ -24,8 +24,35 @@ body {
 
 #CreateNewSoungDialog {
   display: none;
-  
+
+
+
+
 }
+
+.ui-icon-close{
+  background-position:-80px -128px
+}
+
+
+.ui-dialog-title {
+  display: none;
+}
+
+.ui-dialog-titlebar {
+  float: right;
+  border: 0;
+  padding: 0;
+}
+
+.ui-dialog-titlebar-close {
+  top: 0;
+  right: 0;
+  margin: 0;
+  z-index: 999;
+}
+
+
 
 .myTarget {
   font-weight:bold;
